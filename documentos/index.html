@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgendaEstética</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f6fa;color:#263247}
+    header{background:#263b58;color:white;padding:22px 7%;display:flex;justify-content:space-between;align-items:center}
+    header strong{font-size:22px}nav a{color:white;text-decoration:none;margin-left:18px;font-size:14px}
+    main{max-width:1100px;margin:35px auto;padding:0 20px}.welcome{background:white;border-radius:12px;padding:28px;box-shadow:0 3px 14px #1d355710}
+    h1{margin-top:0}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:22px}
+    .card{background:white;border-radius:12px;padding:22px;box-shadow:0 3px 14px #1d355710}
+    .card h2{font-size:17px;margin:0 0 12px}.card p{font-size:13px;color:#68758a;min-height:34px}
+    button{background:#355b83;color:white;border:0;border-radius:7px;padding:10px 14px;cursor:pointer}
+    footer{text-align:center;color:#788397;padding:30px;font-size:12px}
+  </style>
+</head>
+<body>
+<header><strong>AgendaEstética</strong><nav><a href="/">Início</a><a href="/api/clientes">API Clientes</a><a href="/api/agendamentos">API Agendamentos</a></nav></header>
+<main>
+  <section class="welcome">
+    <h1>Bem-vindo ao AgendaEstética</h1>
+    <p>Sistema de apoio à organização de clientes, profissionais, procedimentos e agendamentos.</p>
+    <p><b>Versão inicial — Entrega 2</b></p>
+  </section>
+  <section class="cards">
+    <article class="card"><h2>Clientes</h2><p>Cadastro e consulta dos clientes da clínica.</p><button onclick="location.href='/api/clientes'">Consultar API</button></article>
+    <article class="card"><h2>Profissionais</h2><p>Cadastro e consulta dos profissionais.</p><button onclick="location.href='/api/profissionais'">Consultar API</button></article>
+    <article class="card"><h2>Procedimentos</h2><p>Cadastro e consulta dos procedimentos.</p><button onclick="location.href='/api/procedimentos'">Consultar API</button></article>
+    <article class="card"><h2>Agendamentos</h2><p>Consulta dos horários registrados.</p><button onclick="location.href='/api/agendamentos'">Consultar API</button></article>
+  </section>
+</main>
+<footer>Projeto Integrador — AgendaEstética | Versão acadêmica inicial</footer>
+</body>
+</html>
