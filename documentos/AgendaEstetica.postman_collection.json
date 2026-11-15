@@ -1,0 +1,180 @@
+{
+  "info": {
+    "name": "AgendaEstética — API",
+    "description": "Coleção de testes para os endpoints da versão inicial da API. Inicie o Flask e execute as requisições na ordem necessária.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:5000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Clientes",
+      "item": [
+        {
+          "name": "Listar clientes",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/clientes"
+          }
+        },
+        {
+          "name": "Cadastrar cliente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Cliente de teste\",\n  \"telefone\": \"(49) 99999-0001\",\n  \"email\": \"cliente.teste.postman@example.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/api/clientes"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Profissionais",
+      "item": [
+        {
+          "name": "Listar profissionais",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/profissionais"
+          }
+        },
+        {
+          "name": "Cadastrar profissional",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Profissional de teste\",\n  \"especialidade\": \"Estética facial\",\n  \"telefone\": \"(49) 99999-1001\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/api/profissionais"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Procedimentos",
+      "item": [
+        {
+          "name": "Listar procedimentos",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/procedimentos"
+          }
+        },
+        {
+          "name": "Cadastrar procedimento",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Procedimento de teste\",\n  \"descricao\": \"Registro fictício para demonstração\",\n  \"duracao_minutos\": 45,\n  \"valor\": 100\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/api/procedimentos"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Agendamentos",
+      "item": [
+        {
+          "name": "Listar agendamentos",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/agendamentos"
+          }
+        },
+        {
+          "name": "Cadastrar agendamento (IDs 1)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cliente_id\": 1,\n  \"profissional_id\": 1,\n  \"procedimento_id\": 1,\n  \"data\": \"2026-11-25\",\n  \"horario\": \"14:00\",\n  \"observacoes\": \"Agendamento fictício de teste\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/api/agendamentos"
+          }
+        },
+        {
+          "name": "Atualizar status (agendamento 1)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"Concluído\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/api/agendamentos/1"
+          }
+        },
+        {
+          "name": "Excluir agendamento 1",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/agendamentos/1"
+          }
+        }
+      ]
+    }
+  ]
+}
